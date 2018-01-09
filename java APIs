@@ -1,27 +1,22 @@
-
+///////////////////////////////////////////////
 import java.util.Arrays;
+Arrays.sort();
     // 문자열 배열 정렬 (가나다 순으로 소팅)
-    String s[] = {  "맹구",
-                  "배용준",
-                  "땡칠이",
-                  "장동건",
-                  "강수정",
-                  "송창식",
-                  "황당해",
-                  "고은아"};
-
+    String s[] = {  "맹구",                  "배용준",                  "땡칠이",                  "장동건",                  "강수정",                  "송창식",                  "황당해",                  "고은아"};
     Arrays.sort(s);
     
     / 숫자 배열 정렬
-    double num[] = {               -1000,
-                     0.07890264912715708,
-                                     0.2,
-                    -0.18441624291164838,
-                                       0,
-                                     123,
-                                    -0.1,
-                                    -0.1,
-                                    1000,
-                                  0.4999};
-
+    double num[] = {               -1000,                     0.07890264912715708,                                     0.2,                    -0.18441624291164838,                                       0,                                     123,                                    -0.1,                                    -0.1,                                    1000,                                  0.4999};
     Arrays.sort(num);
+
+///////////////////////////////////////////////
+abs() : 절대값 : int a = Math.abs(b) : a = |b|
+max() : 최대값 : int a = Math.max(b,c) : b,c 중 큰 수가 a 에 대입된다.
+min() : 최소값 : int a = Math.min(b,c) : b,c 중 작은 수가 a 에 대입된다.
+sqrt() : 제곱근 : double z = Math.sqrt(x) : z = 제곱근 기호 x
+exp() : e 지수 : double z = Math.exp(x) : z = e 의 x승
+pow() : 거듭제곱 : double z = Math.pow(x,y) : z = x의 y승
+log() : 자연대수 : double z = Math.log(x) : z = log x
+sin() : 사인 : double z = Math.sin(x) : z = sin x
+cos() : 코사인 : double z = Math.cos(x) : z = cos x
+tan() : 탄젠트 : double z = Math.tan(x) : z = tan x
