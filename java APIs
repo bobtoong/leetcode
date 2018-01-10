@@ -28,4 +28,4 @@ tan() : 탄젠트 : double z = Math.tan(x) : z = tan x
 자료구조
 ///////////////////////////////////////////////
 // 스택
-Stack<int> s = new Stack<int>();
+Stack<Integer> s = new Stack<>();
