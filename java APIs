@@ -10,6 +10,8 @@ Arrays.sort();
     Arrays.sort(num);
 
 ///////////////////////////////////////////////
+Mathatics
+///////////////////////////////////////////////
 abs() : 절대값 : int a = Math.abs(b) : a = |b|
 max() : 최대값 : int a = Math.max(b,c) : b,c 중 큰 수가 a 에 대입된다.
 min() : 최소값 : int a = Math.min(b,c) : b,c 중 작은 수가 a 에 대입된다.
@@ -20,3 +22,10 @@ log() : 자연대수 : double z = Math.log(x) : z = log x
 sin() : 사인 : double z = Math.sin(x) : z = sin x
 cos() : 코사인 : double z = Math.cos(x) : z = cos x
 tan() : 탄젠트 : double z = Math.tan(x) : z = tan x
+
+
+//////////////////////////////////////////////////
+자료구조
+///////////////////////////////////////////////
+// 스택
+Stack<int> s = new Stack<int>();
