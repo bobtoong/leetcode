@@ -1,0 +1,30 @@
+class Solution {
+    protected int findIsland(int[][] grid, int i, int j, int[][] seen){
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length)
+            return 0;
+
+        if (seen[i][j] == 1)
+            return 0;
+
+        seen[i][j] = 1;
+
+        if (grid[i][j] == 0)
+            return 0;
+        else
+            return 1 + findIsland(grid, i-1, j, seen) + findIsland(grid, i, j-1, seen) + findIsland(grid, i+1, j, seen) + findIsland(grid, i, j+1, seen);
+    }
+
+    public int maxAreaOfIsland(int[][] grid) {
+        int i, j, maxArea = 0;
+        int[][] seen = new int[grid.length][grid[0].length];
+
+        for (i = 0; i < grid.length; i++){
+            for (j = 0; j < grid[0].length; j++){
+                if (seen[i][j] != 1 && grid[i][j] == 1){
+                    maxArea = Math.max(maxArea, findIsland(grid, i, j, seen));
+                }
+            }
+        }
+        return maxArea;
+    }
+}
