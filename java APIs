@@ -45,3 +45,51 @@ Integer.bitCount(int a); // a bit 수 계수
 ///////////////////////////////////////////////////////
 String s = "abcde";
 s.toCharArray();    //문자열을 char array로 변환 
+
+
+///////////////////////////////////////////////////////
+//List
+///////////////////////////////////////////////////////
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+import java.util.Vector;
+ 
+List listA = new ArrayList();
+List listB = new LinkedList();
+List listC = new Vector();
+List listD = new Stack();
+List listA = new ArrayList();
+ 
+listA.add("김삿갓");
+listA.add("홍아리");
+listA.add(new String("홍길동"));
+listA.add(1, "1번째 요소값");
+int index = listA.indexOf("홍길동");
+listA.add(index, "홍길동 앞에 추가");
+
+// 인덱스를 통한 조회
+String element0 = listA.get(0).toString();
+String element1 = listA.get(1).toString();
+String element3 = listA.get(2).toString();
+ 
+//Iterator 통한 전체 조회
+Iterator iterator = listA.iterator();
+while (iterator.hasNext()) {
+    String element = (String) iterator.next();
+} 
+//for-loop 통한 전체 조회
+for(Object object : listA) {
+    String element = (String) object;
+}
+
+//삭제
+listA.remove(0); //index
+listA.remove("홍길동"); //  object element
+
+//검색
+listA.contains("홍길동")
+
+
+출처: http://mainia.tistory.com/2323 [녹두장군 - 상상을 현실로]
