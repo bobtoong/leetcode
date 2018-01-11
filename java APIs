@@ -60,7 +60,8 @@ List listA = new ArrayList();
 List listB = new LinkedList();
 List listC = new Vector();
 List listD = new Stack();
-List listA = new ArrayList();
+List<Integer> listA = new ArrayList<>();
+
  
 listA.add("김삿갓");
 listA.add("홍아리");
