@@ -29,6 +29,7 @@ tan() : 탄젠트 : double z = Math.tan(x) : z = tan x
 ///////////////////////////////////////////////
 // 스택
 Stack<Integer> s = new Stack<>();
+Stack <TreeNode[]> stack = new Stack<>();
 
 
 ///////////////////////////////////////////////////////
