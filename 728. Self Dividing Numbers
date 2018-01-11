@@ -1,0 +1,30 @@
+class Solution {
+    public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> listA = new ArrayList<>();
+
+        for (int i = left; i <= right; i++){
+            if (i < 10){
+                listA.add(i);
+            } else {
+                int a = i;
+                boolean selfDividing = true;
+                while (a > 0){
+                    int k = a%10;
+                    if (k == 0){
+                        selfDividing = false;
+                        break;
+                    } else if (i%k != 0){
+                        selfDividing = false;
+                        break;
+                    }
+                    a /= 10;
+                }
+                if (selfDividing == true){
+                    listA.add(i);
+                }
+            }
+        }
+        
+        return listA;
+    }
+}
