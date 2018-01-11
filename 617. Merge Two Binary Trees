@@ -1,0 +1,56 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    
+    private void traverseNode(TreeNode m, TreeNode t1, TreeNode t2){
+        if (t1 != null && t2 == null){
+            m.val = t1.val;
+            if (t1.left != null){
+                m.left = new TreeNode(0);
+                traverseNode(m.left, t1.left, null);
+            }
+            if (t1.right != null){
+                m.right = new TreeNode(0);
+                traverseNode(m.right, t1.right, null);
+            }
+        } else if (t1 == null && t2 != null) {
+            m.val = t2.val;
+            if (t2.left != null){
+                m.left = new TreeNode(0);
+                traverseNode(m.left, null, t2.left);
+            }
+            if (t2.right != null){
+                m.right = new TreeNode(0);
+                traverseNode(m.right, null, t2.right);
+            }
+        } else {
+            m.val = t1.val + t2.val;
+            if (t1.left != null || t2.left != null){
+                m.left = new TreeNode(0);
+                traverseNode(m.left, t1.left, t2.left);                
+            }
+            if (t1.right != null || t2.right != null){
+                m.right = new TreeNode(0);
+                traverseNode(m.right, t1.right, t2.right);
+            }
+        }
+    }
+
+    public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+        TreeNode mergedNode = null;
+        if (t1 == null && t2 == null){
+            return null;
+        } else {
+            mergedNode = new TreeNode(0);
+            traverseNode(mergedNode, t1, t2);
+        }
+        return mergedNode;
+    }
+}
