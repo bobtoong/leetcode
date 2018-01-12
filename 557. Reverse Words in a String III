@@ -9,27 +9,7 @@ class Solution {
             }
             StringBuffer sb = new StringBuffer(splt[i]);
             out += sb.reverse().toString();
-
-//            out += Reverse(splt[i]);
         }
-/*            
-        int i = 0, start = 0, end = 0;
-        int len = s.length();
-        
-        for (i = 0; i < len; i++){
-            if (s.charAt(i) == ' '){
-                for (int j = end-1; j >= start; j--){
-                    out += s.charAt(j);
-                }
-                out += " ";
-                start = i + 1;
-            }
-            end++;
-        }
-        for (int j = end-1; j >= start; j--){
-            out += s.charAt(j);
-        }
-*/
         return out;
     }
 }
