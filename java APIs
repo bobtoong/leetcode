@@ -51,6 +51,10 @@ s.charAt(1); //해당 위치의 문자
 String[] splits = s.split(":");
 s.substring(0, 2); // 1번부터 2번까지 반환
 
+///////////////////////////////////////////////////////
+//StringBuilder
+///////////////////////////////////////////////////////
+String out = (new StringBuilder(s)).reverse().toString(); //문자열 뒤집기
 
 ///////////////////////////////////////////////////////
 //List
@@ -98,4 +102,3 @@ listA.remove("홍길동"); //  object element
 listA.contains("홍길동")
 
 
-출처: http://mainia.tistory.com/2323 [녹두장군 - 상상을 현실로]
