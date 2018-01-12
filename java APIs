@@ -45,11 +45,14 @@ Integer.highestOneBit(int a); // a의 최상위 bit
 //String
 ///////////////////////////////////////////////////////
 String s = "abcde:fghijk:lmn";
+String s2 = "a";
 s.toCharArray();    //문자열을 char array로 변환 
 s.length(); // 길이 
 s.charAt(1); //해당 위치의 문자
 String[] splits = s.split(":");
 s.substring(0, 2); // 1번부터 2번까지 반환
+boolean contains = s.contains(s2); //포함하고 있으면 true
+
 
 ///////////////////////////////////////////////////////
 //StringBuilder
