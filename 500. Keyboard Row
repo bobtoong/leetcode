@@ -1,0 +1,58 @@
+class Solution {
+    public String[] findWords(String[] words) {
+        String[] out;
+        String fstRow = "qwertyuiop";
+        String sndRow = "asdfghjkl";
+        String trdRow = "zxcvbnm";
+        int foundRow = -1;
+        int outcnt = 0;
+        boolean bInsert = true;
+        List listString = new ArrayList();
+
+        for (int i = 0; i < words.length; i++){
+            int len = words[i].length();
+            String lowerStr = words[i].toLowerCase();
+            for (int j = 0; j < len; j++){
+                if (fstRow.contains(Character.toString(lowerStr.charAt(j))) == true){
+                    if (foundRow == -1)
+                        foundRow = 0;
+                    if (foundRow != 0){
+                        foundRow = -1;
+                        bInsert = false;
+                        break;
+                    }
+                } else if (sndRow.contains(Character.toString(lowerStr.charAt(j))) == true){
+                    if (foundRow == -1)
+                        foundRow = 1;
+                    if (foundRow != 1){
+                        foundRow = -1;
+                        bInsert = false;
+                        break;
+                    }
+                } else if (trdRow.contains(Character.toString(lowerStr.charAt(j))) == true){
+                    if (foundRow == -1)
+                        foundRow = 2;
+                    if (foundRow != 2){
+                        foundRow = -1;
+                        bInsert = false;
+                        break;
+                    }
+                }
+            }
+            if (bInsert == true)
+                listString.add(words[i]);
+            foundRow = -1;
+            bInsert = true;
+
+        }
+        
+        int arraySize = listString.size();
+        out = new String[arraySize];
+        
+        for (int i = 0; i < arraySize; i++){
+            out[i] = (String)listString.get(i);
+        }
+
+        return out;
+    }
+}
