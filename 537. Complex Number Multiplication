@@ -1,0 +1,20 @@
+class Solution {
+    public String complexNumberMultiply(String a, String b) {
+        String aaS = new String(a.substring(0, a.indexOf("+")));
+        String abS = new String(a.substring(a.indexOf("+")+1, a.length()-1));
+        String baS = new String(b.substring(0, b.indexOf("+")));
+        String bbS = new String(b.substring(b.indexOf("+")+1, b.length()-1));
+
+        int aaI = Integer.parseInt(aaS);
+        int abI = Integer.parseInt(abS);
+        int baI = Integer.parseInt(baS);
+        int bbI = Integer.parseInt(bbS);
+
+        int outa, outb;
+
+        outa = (aaI * baI) - (abI * bbI);
+        outb = (aaI * bbI) + (abI * baI);
+
+        return Integer.toString(outa) + "+" + Integer.toString(outb) + "i";
+    }
+}
