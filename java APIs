@@ -40,6 +40,10 @@ stack.push(new TreeNode[] {t1, t2});
 Integer.bitCount(int a); // a bit 수 계수
 Integer.highestOneBit(int a); // a의 최상위 bit
 
+String from = "123";
+int to = Integer.parseInt(from);
+int from = 123;
+String to = Integer.toString(from);
 
 ///////////////////////////////////////////////////////
 //String
