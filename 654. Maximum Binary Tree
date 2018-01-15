@@ -9,9 +9,8 @@
  */
 class Solution {
     private TreeNode construct(int[] nums, int l, int r){
+        if (l == r) return null;
         int maxI = findMax(nums, l, r);
-        if (maxI == -1) return null;
-
         TreeNode currNode = new TreeNode(0);
 
         currNode.val = nums[maxI];
@@ -22,11 +21,10 @@ class Solution {
     }
 
     private int findMax(int[] nums, int l, int r){
-        int max = -9999, max_i = -1;
+        int max_i = l;
         for (int i = l; i < r; i++){
-            if (nums[i] > max){
+            if (nums[i] > nums[max_i]){
                 max_i = i;
-                max = nums[i];
             }
         }
 
@@ -37,4 +35,3 @@ class Solution {
         TreeNode root = construct(nums, 0, nums.length);        
         return root;
     }
-}
