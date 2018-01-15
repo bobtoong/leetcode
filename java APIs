@@ -54,6 +54,8 @@ s.toCharArray();    //문자열을 char array로 변환
 s.length(); // 길이 
 s.charAt(1); //해당 위치의 문자
 String[] splits = s.split(":");
+String s = "1+2i";
+String[] x = s.split("\\+|i"); // x[0] = 1, x[1] = 2
 s.substring(0, 2); // 1번부터 2번까지 반환
 boolean contains = s.contains(s2); //포함하고 있으면 true
 s.toLowerCase(); // 소문자 변환
