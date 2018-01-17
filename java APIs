@@ -118,3 +118,12 @@ listA.contains("홍길동")
 // Character
 Character.toString(lowerStr.charAt(j)); // 문자열에서 캐릭터를 하나 얻어서 다시 문자열로 변환
 
+///////////////////////////////////////
+// HashSet  중복을 허용하지 않는 Set
+Set<String> set =  new HashSet<String>();
+for(String str: strArr) {
+    set.add(str);
+}
+set.remove("b");
+set.removeAll(set);
+set.clear();
