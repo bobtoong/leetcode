@@ -1,0 +1,30 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    private TreeNode traverseNode(TreeNode node, int L, int R){
+        if (node == null) return null;
+
+        if (L <= node.val && node.val <= R){
+            TreeNode newNode = new TreeNode(node.val);
+            newNode.left = traverseNode(node.left, L, R);
+            newNode.right = traverseNode(node.right, L, R);
+            return newNode;
+        } else if (L > node.val) {
+            return traverseNode(node.right, L, R);
+        } else if (node.val > R) {
+            return traverseNode(node.left, L, R);
+        }
+        return null;
+    }
+
+    public TreeNode trimBST(TreeNode root, int L, int R) {
+        return traverseNode(root, L, R);
+    }
+}
