@@ -126,4 +126,5 @@ for(String str: strArr) {
 }
 set.remove("b");
 set.removeAll(set);
+set.size();//크기
 set.clear();
