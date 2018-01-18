@@ -1,0 +1,17 @@
+class Solution {
+    public int islandPerimeter(int[][] grid) {
+        int len = 0, landCnt = 0, neighbor = 0, row = grid.length, col = grid[0].length;
+
+        for (int i = 0; i < row; i++){
+            for (int j = 0; j < col; j++){
+                if (grid[i][j] == 1){
+                    landCnt++;
+                    if (j < col-1 && grid[i][j+1] == 1) neighbor++;
+                    if (i < row-1 && grid[i+1][j] == 1) neighbor++;
+                }
+            }
+        }
+        
+        return landCnt*4 - neighbor*2;
+    }
+}
