@@ -1,0 +1,20 @@
+class Solution {
+    private boolean isPrimeNumver(int a){
+        if (a <= 1) return false;
+
+        for (int i = 2; i < a; i++){
+            if (a%i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public int countPrimeSetBits(int L, int R) {
+        int primeNumberCnt = 0;
+
+        for (int i = L; i <= R; i++){
+            if (isPrimeNumver(Integer.bitCount(i)) == true) primeNumberCnt++;
+        }
+        return primeNumberCnt;
+    }
+}
