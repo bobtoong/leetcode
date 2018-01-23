@@ -40,6 +40,7 @@ stack.push(new TreeNode[] {t1, t2});
 ///////////////////////////////////////////////////////
 Integer.bitCount(int a); // a bit 수 계수
 Integer.highestOneBit(int a); // a의 최상위 bit자리 * 2한 값
+Integer.toBinaryString(n); -> binary형태의 문자열로 변환
 
 String from = "123";
 int to = Integer.parseInt(from);
