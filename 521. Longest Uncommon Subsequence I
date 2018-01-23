@@ -1,0 +1,29 @@
+class Solution {
+    public int findSubsequence(String small, String large){
+        if (large.contains(small) == false){
+            return small.length();
+        } else {
+            return -1;
+        }
+    }
+
+    public int findLUSlength(String a, String b) {
+        int aLen = a.length();
+        int maxLen = -1;
+        for (int i = aLen; i >= 0; i--){
+            for (int j = 0; j < i; j++){
+                int len = findSubsequence(a.substring(j, i), b);
+                if (maxLen < len) maxLen = len;
+            }
+        }
+
+        int bLen = b.length();
+        for (int i = bLen; i >= 0; i--){
+            for (int j = 0; j < i; j++){
+                int len = findSubsequence(b.substring(j, i), a);
+                if (maxLen < len) maxLen = len;
+            }
+        }
+        return maxLen;
+    }
+}
