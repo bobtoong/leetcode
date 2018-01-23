@@ -19,6 +19,7 @@ sqrt() : 제곱근 : double z = Math.sqrt(x) : z = 제곱근 기호 x
 exp() : e 지수 : double z = Math.exp(x) : z = e 의 x승
 pow() : 거듭제곱 : double z = Math.pow(x,y) : z = x의 y승
 log() : 자연대수 : double z = Math.log(x) : z = log x
+밑이 y인 log     : double z = Math.log(x)/Math.log(y) <- 밑이 y
 sin() : 사인 : double z = Math.sin(x) : z = sin x
 cos() : 코사인 : double z = Math.cos(x) : z = cos x
 tan() : 탄젠트 : double z = Math.tan(x) : z = tan x
