@@ -1,0 +1,12 @@
+class Solution {
+    public boolean hasAlternatingBits(int n) {
+        int bit = n & 0x01;
+        int msb = Integer.highestOneBit(n);
+        for (int i = 1; i <= Math.log(msb)/Math.log(2); i++){
+            if ((bit ^ ((n >> i) & 0x01)) == 0)
+                return false;
+            bit = (n >> i) & 0x01;
+        }
+        return true;
+    }
+}
