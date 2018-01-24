@@ -1,0 +1,27 @@
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        int capital = 0, small = 0;
+        int len = word.length();
+        char c;
+        
+        for (int i = 0; i < len; i++){
+            c = word.charAt(i);
+            if ('A' <= c && c <= 'Z'){
+                capital++;
+            } else {
+                small++;
+            }
+        }
+        if (capital > 0 && small == 0){
+            return true;
+        } else if (capital == 1){
+            c = word.charAt(0);
+            if ('A' <= c && c <= 'Z') return true;
+            else return false;
+        } else if (capital == 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
