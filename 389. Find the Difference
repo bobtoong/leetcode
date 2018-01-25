@@ -1,0 +1,24 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int len = s.length();
+        char ch;
+        String str;
+        char[] ss = new char[26];
+
+        for (int i = 0; i < len; i++){
+            ch = t.charAt(i);
+            ss[ch-'a']++;
+            ch = s.charAt(i);
+            ss[ch-'a']--;
+        }
+        ch = t.charAt(len);
+        ss[ch-'a']++;
+
+        ch = 'a';
+        for (char i = 0; i < 26; i++){
+            if (ss[i] > 0) return ch;
+            ch++;
+        }
+        return ch;
+    }
+}
