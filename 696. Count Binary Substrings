@@ -1,0 +1,25 @@
+class Solution {
+    public int countBinarySubstrings(String s) {
+        boolean change = false;
+        char a = ' ', before = ' ';
+        int same1cnt = 0, same0cnt = 0, num = 0, len = s.length();
+
+        for (int i = 0; i < len; i++){
+            before = a;
+            a = s.charAt(i);
+
+            if (a != before){
+                if (same1cnt != 0 && same0cnt != 0){
+                    num += Math.min(same1cnt, same0cnt);
+                    if (a == '1')   same1cnt = 0;
+                    else            same0cnt = 0;
+                }
+            }
+
+            if (a == '1')   same1cnt++;
+            else            same0cnt++;
+        }
+        num += Math.min(same1cnt, same0cnt);
+        return num;
+    }
+}
