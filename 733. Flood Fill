@@ -1,0 +1,25 @@
+class Solution {
+    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+        int [][] seen = new int[image.length][image[0].length];
+        int originColor = image[sr][sc];
+        putPixel(image, seen, sr, sc, originColor, newColor);
+        return image;
+    }
+
+    public void putPixel(int[][] image, int[][] seen, int x, int y, int originColor, int newColor){
+        if (seen[x][y] == 1) return;
+
+        seen[x][y] = 1;
+        if (originColor != image[x][y]) return;
+
+        image[x][y] = newColor;
+        if (x-1 >= 0)
+            putPixel(image, seen, x-1, y, originColor, newColor);
+        if (y-1 >= 0)
+            putPixel(image, seen, x, y-1, originColor, newColor);
+        if (x+1 < image.length)
+            putPixel(image, seen, x+1, y, originColor, newColor);
+        if (y+1 < image[0].length)
+            putPixel(image, seen, x, y+1, originColor, newColor);
+    }
+}
