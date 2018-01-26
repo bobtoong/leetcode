@@ -1,0 +1,16 @@
+class Solution {
+    public int getSum(int a, int b) {
+        int sum = 0;
+        int mask = 1;
+        boolean carry = false;
+
+        for (int i = 0; i < 32; i++){
+            mask = 0x01 << i;
+            sum |= (a & mask) ^ (b & mask) ^ (carry ? mask : 0);
+            if ((((a & mask) != 0) && ((b & mask) != 0)) || (((a & mask) != 0) && carry) || (((b & mask) != 0) && carry)){
+                carry = true;
+            } else carry = false;
+        }
+        return sum;
+    }
+}
