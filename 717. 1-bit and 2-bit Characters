@@ -1,0 +1,25 @@
+class Solution {
+    public boolean isOneBitCharacter(int[] bits) {
+        boolean ans = false;
+        int len = bits.length, i;
+
+        if (len == 1) return true;
+        if (len == 2){
+            if (bits[0] == 1) return false;
+            else return true;
+        }
+
+        for (i = 0; i < len;){
+            if (len - i < 2) return true;
+            if (bits[i] == 1){
+                ans = false;
+                i += 2;
+            }else{
+                ans = true;
+                i++;
+            }
+        }
+
+        return ans;
+    }
+}
