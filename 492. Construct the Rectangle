@@ -1,0 +1,27 @@
+class Solution {
+    public int[] constructRectangle(int area) {
+        List<Integer> list = new ArrayList<> ();
+        int[] ans = new int[2];
+        int min = area;
+
+        for (int i = 1; i <= area; i++){
+            if (area%i == 0) list.add(i);
+        }
+
+        int a = 0, b;
+        int minus = 0;
+        for (int i = list.size()-1; i >= 0; i--){
+            a = list.get(i);
+            minus = Math.abs(a-area/a);
+
+            if (min > minus){
+                b = area/a;
+                ans[0] = Math.max(a, b);
+                ans[1] = Math.min(a, b);
+                min = minus;
+            }
+        }
+
+        return ans;
+    }
+}
