@@ -1,0 +1,38 @@
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int difference = 0;
+        int index1 = -1, index2 = -1;
+        for (int i = 0; i < numbers.length; i++){
+            difference = target - numbers[i];
+            if (difference < 0) break;
+            index2 = binarySearch(numbers, 0, numbers.length-1, difference);
+            if (index2 != -1){
+                if (index2 == i) continue;
+                index1 = i + 1;
+                index2++;
+                if (index1 > index2){
+                    int temp = index1;
+                    index1 = index2;
+                    index2 = temp;
+                }
+                return new int[]{index1, index2};
+            }
+        }
+        return null;
+    }
+
+    private int binarySearch(int[] n, int l, int u, int t){
+        int median = (l+u)/2;
+
+        if (n[median] == t) return median;
+        if (n[median] < t){
+            l = median + 1;
+            if (l > u) return -1;
+        }
+        if (n[median] > t){
+            u = median -1;
+            if (l > u) return -1;
+        }
+        return binarySearch(n, l, u, t);
+    }
+}
