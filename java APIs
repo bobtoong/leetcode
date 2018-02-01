@@ -139,10 +139,15 @@ set.size();//크기
 set.clear();
 
 ///////////////////////////////////////
-// HashMap
+// HashMap(동기), HashSet(비동기)
 
 Map<Integer, Integer> counts = HashMap<Integer, Integer>():
 counts.constaisKey(int) // 키값이 존재하는지 확인
 counts.put(int Key, int Num) //입력
 counts.get(int Key) //조회
 
+///////////////////////////////////////
+// Collections
+List<Integer> l = new ArrayList<>();
+
+Collections.sort(l); // 기본 sort
