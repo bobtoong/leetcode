@@ -1,0 +1,25 @@
+class Solution {
+    public boolean canTransform(String start, String end) {
+        String sub;
+        boolean RX = true, LX = true;
+        while (RX == true || LX == true){
+            String[] strarr = start.split("RX");
+            start = strarr[0];
+            RX = false;
+            for (int i = 1; i < strarr.length; i++){
+                start += "XR" + strarr[i];
+                RX = true;
+            }
+
+            strarr = start.split("XL");
+            start = strarr[0];
+            LX = false;
+            for (int i = 1; i < strarr.length; i++){
+                start += "LX" + strarr[i];
+                LX = true;
+            }            
+        }
+        
+        return start.equals(end);
+    }
+}
