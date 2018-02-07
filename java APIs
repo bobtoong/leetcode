@@ -153,3 +153,13 @@ Math.max(counts.values()); //전체 값 중에 가장 큰값
 List<Integer> l = new ArrayList<>();
 
 Collections.sort(l); // 기본 sort
+
+///////////////////////////////////////
+// TreeMap 중복을 허용하지 않고 Key에 대해 오름차순 정렬
+HashMap<Integer, Integer> map = new HashMap<>();
+TreeMap<Integer, Integer> tm = new TreeMap<>(map);
+Iterator<Integer> iter = tm.keySet().iterator();
+
+while(iter.hasNext()){
+    ...
+}
