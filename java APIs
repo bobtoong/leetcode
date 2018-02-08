@@ -146,7 +146,13 @@ counts.constaisKey(int) // 키값이 존재하는지 확인
 counts.put(int Key, int Num) //입력
 counts.get(int Key) //조회
 counts.getOrDefault(x, 0); // 값이 없으면 default return
-Math.max(counts.values()); //전체 값 중에 가장 큰값
+Collections.max(counts.values())
+Collections.max(counts.keySet())
+
+for (int x : counts.keySet()){
+    ...
+}
+
 
 ///////////////////////////////////////
 // Collections
