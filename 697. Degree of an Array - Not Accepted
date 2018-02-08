@@ -1,0 +1,52 @@
+최고 degree중에서 짧은 것을 찾아내지 못함
+class Solution {
+    public int findShortestSubArray(int[] nums) {
+        if (nums.length <= 1) return 1;
+        HashMap<Integer, Degree> map = new HashMap<>();
+        Degree d;
+
+        for (int i = 0; i < nums.length; i++){
+            d = map.get(nums[i]);
+            if (d == null){
+                d = new Degree();
+                d.val = nums[i];
+                d.left = i;
+                d.right = i;
+                d.frequency = 1;
+                map.put(nums[i], d);
+            } else {
+                d.right = i;
+                d.frequency++;
+                map.put(nums[i], d);
+            }
+        }
+
+        int max = 0, frequentNum = -1;
+        for (int i = 0; i < 50000; i++){
+            if (arr[i] > max){
+                max = arr[i];
+                frequentNum = i;
+            }
+        }
+        if (frequentNum == -1) return 0;
+
+        int left = -1, right = -1;
+        for (int i = 0, j = nums.length-1; ;){
+            if (nums[i] == frequentNum) left = i;
+            if (nums[j] == frequentNum) right = j;
+            
+            if (left != -1 && right != -1) break;
+            if (left == -1) i++;
+            if (right == -1) j--;
+        }
+        
+        return right - left + 1;
+    }
+
+    class Degree {
+        int val;
+        int left;
+        int right;
+        int frequency;
+    }
+}
