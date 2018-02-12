@@ -1,0 +1,11 @@
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        int i = 0;
+        for (; i < letters.length; i++){
+            if (letters[i] - target > 0)
+                return letters[i];
+        }
+        if (i == letters.length) return letters[0];
+        return 0;
+    }
+}
