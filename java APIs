@@ -167,5 +167,5 @@ TreeMap<Integer, Integer> tm = new TreeMap<>(map);
 Iterator<Integer> iter = tm.keySet().iterator();
 
 while(iter.hasNext()){
-    ...
+    Integer obj = iter.next();
 }
