@@ -150,9 +150,11 @@ Collections.max(counts.values())
 Collections.max(counts.keySet())
 
 for (int x : counts.keySet()){
-    ...
+    Integer Obj = counts.get(x);
 }
 
+String[] ans = new String[map.get(minIndexSum).size()];
+return map.get(minIndexSum).toArray(ans); //ArrayList로 변환
 
 ///////////////////////////////////////
 // Collections
