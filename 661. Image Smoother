@@ -1,0 +1,26 @@
+class Solution {
+    public int[][] imageSmoother(int[][] M) {
+        int[][] ans = new int[M.length][M[0].length];
+
+        for (int i = 0; i < M.length; i++){
+            for (int j = 0; j < M[0].length; j++){
+                ans[i][j] = sum(M, i, j);
+            }
+        }
+
+        return ans;
+    }
+
+    private int sum(int[][] m, int a, int b){
+        int allsum = 0, subsum = 0;
+
+        for (int i = (a == 0)? 0 : a-1; i <= ((a == m.length-1) ? a : a+1); i++){
+            for (int j = (b == 0)? 0 : b-1; j <= ((b == m[0].length-1) ? b : b+1); j++){
+                allsum++;
+                subsum += m[i][j];
+            }
+        }
+
+        return (int)Math.round(subsum/allsum);
+    }
+}
