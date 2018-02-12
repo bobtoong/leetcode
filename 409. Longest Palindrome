@@ -1,0 +1,39 @@
+class Solution {
+    public int longestPalindrome(String s) {
+        int[] salphNum = new int[26];
+        int[] lalphNum = new int[26];
+        int ans = 0;
+
+        for (int i = 0; i < s.length(); i++){
+            if ('a' <= s.charAt(i))
+                salphNum[s.charAt(i) - 'a']++;
+            if (s.charAt(i) <= 'Z')
+                lalphNum[s.charAt(i) - 'A']++;
+        }
+        boolean odd = false;
+
+        for (int i = 0; i < 26; i++){
+            if (salphNum[i]%2 == 0){ //even
+                ans += salphNum[i];
+            } else{
+                if (odd == false){
+                    ans += salphNum[i];
+                    odd = true;
+                } else {
+                    ans += (salphNum[i]-1);
+                }
+            }
+            if (lalphNum[i]%2 == 0){ //even
+                ans += lalphNum[i];
+            } else{
+                if (odd == false){
+                    ans += lalphNum[i];
+                    odd = true;
+                } else {
+                    ans += (lalphNum[i]-1);
+                }
+            }
+        }
+        return ans;
+    }
+}
