@@ -25,7 +25,9 @@ log() : 자연대수 : double z = Math.log(x) : z = log x
 sin() : 사인 : double z = Math.sin(x) : z = sin x
 cos() : 코사인 : double z = Math.cos(x) : z = cos x
 tan() : 탄젠트 : double z = Math.tan(x) : z = tan x
-
+round(): 반올림
+ceil() : 올림
+floor() : 버림
 
 //////////////////////////////////////////////////
 자료구조
