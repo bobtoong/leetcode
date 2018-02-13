@@ -1,0 +1,29 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    int maxLen;
+
+    public int diaBT(TreeNode n){
+        if (n == null) return 0;
+        int L = diaBT(n.left);
+        int R = diaBT(n.right);
+
+        maxLen = Math.max(maxLen, L+R);
+
+        return Math.max(L, R) + 1;
+    }
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        maxLen = 0;
+        diaBT(root);
+
+        return maxLen;
+    }
+}
