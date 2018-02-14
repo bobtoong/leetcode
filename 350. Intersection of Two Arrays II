@@ -1,0 +1,34 @@
+class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        if (Math.min(nums1.length, nums2.length) == 0) return new int[0];
+        List<Integer> ans = new ArrayList<>();
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        
+        int len = Math.max(nums1.length, nums2.length);
+        int i1 = 0, i2 = 0;
+
+        while(true){
+            if (nums1[i1] == nums2[i2]){
+                ans.add(nums1[i1]);
+                i1++;
+                i2++;
+                if (i1 >= nums1.length) break;
+                if (i2 >= nums2.length) break;
+            } else if (nums1[i1] > nums2[i2]){
+                i2++;
+                if (i2 >= nums2.length) break;
+            }else{
+                i1++;
+                if (i1 >= nums1.length) break;
+            }
+        }
+
+        int[] r = new int[ans.size()];
+        for (int i = 0; i < r.length; i ++){
+            r[i] = ans.get(i);
+        }
+        
+        return r;
+    }
+}
