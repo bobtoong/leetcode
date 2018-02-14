@@ -1,0 +1,14 @@
+class Solution {
+    public boolean checkRecord(String s) {
+        int len = s.length();
+        String s1 = s.replaceAll("A", "");
+        int len1 = s1.length();
+        if (len1 < len -1) return false;
+        if (len1 < 2) return true;
+
+        String s2 = s.replace("LLL", "");
+        int len2 = s2.length();
+        if (len2 < len -1) return false;
+        return true;
+    }
+}
