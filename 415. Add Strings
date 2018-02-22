@@ -1,0 +1,34 @@
+class Solution {
+    public String addStrings(String num1, String num2) {
+        int len1 = num1.length();
+        int len2 = num2.length();
+        int len = Math.max(len1, len2);
+        int idx1, idx2;
+        String ans = new String();
+        int ch1 = 0, ch2 = 0, carry = 0;
+
+        ans = "";
+        for (int i = 0; i < len; i++){
+            idx1 = len1-i-1;
+            idx2 = len2-i-1;
+            if (idx1 >= 0)
+                ch1 = num1.charAt(idx1) - '0';
+            else
+                ch1 = 0;
+            if (idx2 >= 0)
+                ch2 = num2.charAt(idx2) - '0';
+            else
+                ch2 = 0;
+            ch1 += ch2 + carry;
+            if (ch1 >= 10){
+                carry = 1;
+                ch1 -= 10;
+            }else carry = 0;
+            ans = Integer.toString(ch1) + ans;
+            ch1 = 0;
+        }
+        if (carry > 0)
+            ans = Integer.toString(ch1 + carry) + ans;
+        return ans;
+    }
+}
