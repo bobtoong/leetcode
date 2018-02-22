@@ -131,7 +131,7 @@ listA.contains("홍길동")
 Character.toString(lowerStr.charAt(j)); // 문자열에서 캐릭터를 하나 얻어서 다시 문자열로 변환
 
 ///////////////////////////////////////
-// HashSet  중복을 허용하지 않는 Set
+// HashSet(비동기)
 Set<String> set =  new HashSet<String>();
 for(String str: strArr) {
     set.add(str);
@@ -142,7 +142,7 @@ set.size();//크기
 set.clear();
 
 ///////////////////////////////////////
-// HashMap(동기), HashSet(비동기)
+// HashMap(동기)
 
 Map<Integer, Integer> counts = HashMap<Integer, Integer>():
 counts.constaisKey(int) // 키값이 존재하는지 확인
