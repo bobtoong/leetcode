@@ -1,0 +1,27 @@
+class Solution {
+    public String longestWord(String[] words) {
+        Set<String> wordset = new HashSet<>();
+
+        for (int i = 0; i < words.length; i++){
+            wordset.add(words[i]);
+        }
+
+        String ans = "";
+        boolean good = false;
+        for (String word : wordset){
+            if (word.length() > ans.length() || (word.length() == ans.length() && word.compareTo(ans) < 0)){
+                good = true;
+                for (int i = 1; i < word.length(); i++){
+                    if (wordset.contains(word.substring(0, i)) != true){
+                        good = false;
+                        break;
+                    }
+                }
+                if (good == true){
+                    ans = word;
+                }
+            }
+        }
+        return ans;
+    }
+}
