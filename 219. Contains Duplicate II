@@ -14,7 +14,7 @@ class Solution {
             int value =map.get(key);
             
             if (prevV == value){
-                if (prevI - key <= k) return true;
+                if (Math.abs(prevI - key) <= k) return true;
             }
             prevI = key;
             prevV = value;
