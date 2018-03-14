@@ -1,0 +1,15 @@
+class Solution {
+    public int findUnsortedSubarray(int[] nums) {
+        int[] ns = nums.clone();
+        int low = Integer.MAX_VALUE, high = -1;
+        Arrays.sort(ns);
+        
+        for (int i = ns.length-1; i>= 0; i--){
+            if (nums[i]  != ns[i]){
+                low = Math.min(low, i);
+                high = Math.max(high, i);
+            }
+        }
+        return high >= 0 ? high - low + 1 : 0;
+    }
+}
