@@ -1,0 +1,19 @@
+class Solution {
+    public int thirdMax(int[] nums) {
+        int max = -1 * Integer.MAX_VALUE;
+        int third = -1 * Integer.MAX_VALUE + 2;
+        int count = 0;
+        Arrays.sort(nums);
+
+        if (nums.length <= 2) return nums[nums.length-1];
+
+        max = nums[nums.length-1];
+        for (int i = nums.length - 2; i >= 0; i--){
+            if (nums[i] < nums[i+1]) count++;
+            if (count == 2)
+                return nums[i];
+        }
+        
+        return max;
+    }
+}
