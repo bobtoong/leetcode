@@ -97,6 +97,7 @@ List listC = new Vector();
 List listD = new Stack();
 List<Integer> listA = new ArrayList<>();
 
+List listAA = listA.clone();
  
 listA.add("김삿갓");
 listA.add("홍아리");
@@ -161,6 +162,12 @@ for (int x : counts.keySet()){
 
 String[] ans = new String[map.get(minIndexSum).size()];
 return map.get(minIndexSum).toArray(ans); //ArrayList로 변환
+
+for (Map<Integer, Integer> entry : map.entrySet()){
+    if (map.containsKey(entry.getKey() + k)){
+        count++;
+    }
+}
 
 ///////////////////////////////////////
 // Collections
